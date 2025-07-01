@@ -1,0 +1,22 @@
+package com.yedam.app.di.java;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.yedam.app.di.SamsungTV;
+import com.yedam.app.di.SonySpeaker;
+
+
+@Configuration //Spring 설정
+public class JavaConfig {
+	@Bean
+	 SonySpeaker createSonySpeaker() {
+		return new SonySpeaker();
+	}
+	@Bean
+	SamsungTV createSamsungTV(SonySpeaker speaker) {
+		//1) 생성자 주입 방식
+		SamsungTV tv = new SamsungTV(speaker);
+		return tv;
+	}
+}
