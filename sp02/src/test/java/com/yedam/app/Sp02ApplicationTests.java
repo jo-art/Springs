@@ -42,7 +42,7 @@ class Sp02ApplicationTests {
 //	}
 //	@Test
 	public void insertSelectKey() {
-		EmpVO emp = EmpVO.builder().lastName("Hong").email("hong@naver.com").jobId("IT_PROG").salary(1200).build();
+		EmpVO emp = EmpVO.builder().lastName("Hong").email("hong@naver.com").jobId("IT_PROG").salary(1200.0).build();
 		int result = empMapper.insertInfo(emp);
 		System.out.println("사원번호 :" + emp.getEmployeeId());
 		
@@ -56,7 +56,7 @@ class Sp02ApplicationTests {
 		EmpVO findVO = empMapper.selectInfo(emp);
 		
 		//2)값변경
-		findVO.setSalary(2550);
+		findVO.setSalary(2550.0);
 		//3)테이블에 업데이트
 		int result =empMapper.updateInfo(1001, findVO);
 		assertEquals(1,result);
