@@ -49,7 +49,7 @@ public class EmpServiceImpl implements EmpService {
 			isSuccessed = true;
 		}
 		map.put("result", isSuccessed);
-		map.put("target", map);
+		map.put("target", empVO);
 		/*
 		  {
 		  		"result":true,
